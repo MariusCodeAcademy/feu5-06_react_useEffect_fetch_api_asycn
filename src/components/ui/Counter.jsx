@@ -11,12 +11,12 @@ function Counter() {
   }, 3000);
 
   function increase() {
-    setCount(count + 1);
+    setCount((prevCount) => prevCount + 1);
   }
   //efektas pasileidzia tik susikurus komponentui
   useEffect(() => {
     setTimeout(() => {
-      setCount(count + 1);
+      setCount((prevCount) => prevCount + 1);
     }, 5000);
   }, []);
 
