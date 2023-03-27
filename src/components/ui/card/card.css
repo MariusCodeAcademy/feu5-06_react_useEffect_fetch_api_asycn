@@ -4,4 +4,9 @@
   border: 1px solid rgb(191, 180, 180);
   border-radius: 5px;
   background-color: snow;
+  max-width: 200px;
+}
+
+.center {
+  text-align: center;
 }

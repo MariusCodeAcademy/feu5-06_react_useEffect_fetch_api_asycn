@@ -1,6 +1,28 @@
 // susikuriam komponenta
-// su setTimeout pakeisti title po 3sek
-// pakeista.
+import React, { useState } from 'react';
+import Card from './card/Card';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  // su setTimeout pakeisti title po 3sek
+  // pakeista.
+  setTimeout(() => {
+    document.title = 'pakeista';
+  }, 3000);
+
+  function increase() {
+    setCount(count + 1);
+  }
+
+  return (
+    <Card center>
+      <h2>{count}</h2>
+      <button onClick={increase}>Plus</button>
+    </Card>
+  );
+}
+
+export default Counter;
 
 // sukurti state, ir mygtuka kurio paspaudimu didinsim state
 // state atvizduosim jsx

@@ -1,6 +1,6 @@
 import './card.css';
 
-function Card({ children }) {
-  return <div className='card'>{children}</div>;
+function Card({ children, center = '' }) {
+  return <div className={`card ${center && 'center'}`}>{children}</div>;
 }
 export default Card;
