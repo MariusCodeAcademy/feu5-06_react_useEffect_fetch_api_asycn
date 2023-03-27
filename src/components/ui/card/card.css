@@ -10,3 +10,7 @@
 .center {
   text-align: center;
 }
+
+.full {
+  max-width: 100%;
+}

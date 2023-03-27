@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Card from '../ui/card/Card';
 import Grid from '../ui/grid/Grid';
 import Title from './../ui/title/Title';
+import SinglePost from './SinglePost';
 
 function PostList() {
   const [postsArr, setPostsArr] = useState([]);
@@ -22,10 +23,7 @@ function PostList() {
 
       <Grid>
         {postsArr.map((pObj) => (
-          <Card key={pObj.id}>
-            <h3>Post</h3>
-            <p>post text</p>
-          </Card>
+          <SinglePost key={pObj.id} item={pObj} />
         ))}
       </Grid>
     </div>
