@@ -4,6 +4,11 @@ import Card from './card/Card';
 
 function Counter() {
   const [count, setCount] = useState(0);
+  const [colorClass, setColorClass] = useState('black');
+  let style = {
+    color: colorClass,
+  };
+  // style.color = count > 5 ? 'green' : 'black';
   // su setTimeout pakeisti title po 3sek
   // pakeista.
   setTimeout(() => {
@@ -16,13 +21,28 @@ function Counter() {
   //efektas pasileidzia tik susikurus komponentui
   useEffect(() => {
     setTimeout(() => {
-      setCount((prevCount) => prevCount + 1);
+      // setCount((prevCount) => prevCount + 1);
     }, 5000);
   }, []);
+  // efektas vyksta priklausomai nuo count
+  useEffect(() => {
+    console.log('pasikeite count', count);
+    switch (true) {
+      case count < 5:
+        setColorClass('black');
+        break;
+      case count < 7:
+        setColorClass('blue');
+        break;
+      case count < 11:
+        setColorClass('red');
+        break;
+    }
+  }, [count]);
 
   return (
     <Card center>
-      <h2>{count}</h2>
+      <h2 style={style}>{count}</h2>
       <button onClick={increase}>Plus</button>
     </Card>
   );
