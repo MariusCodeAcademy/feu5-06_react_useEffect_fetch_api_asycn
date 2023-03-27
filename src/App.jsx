@@ -3,7 +3,7 @@ import './styles/App.css';
 import Timer from './components/Timer';
 import Counter from './components/Counter';
 import UsersList from './components/UsersList';
-import ProductsList from './components/ProductsList';
+import ProductsList from './components/shop/ProductsList';
 
 function App() {
   return (

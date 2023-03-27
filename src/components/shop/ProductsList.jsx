@@ -1,5 +1,7 @@
 // sukurti komponenta
 import React, { useEffect, useState } from 'react';
+import Card from '../ui/card/Card';
+import SingleProduct from './SingleProduct';
 
 function ProductsList() {
   const [productsArr, setProductsArr] = useState([]);
@@ -8,7 +10,8 @@ function ProductsList() {
     fetch('https://dummyjson.com/products')
       .then((resp) => resp.json())
       .then((dataBack) => {
-        console.log('dataBack ===', dataBack);
+        console.log('dataBack ===', dataBack.products);
+        setProductsArr(dataBack.products);
       })
       .catch(console.warn);
   }, []);
@@ -18,7 +21,13 @@ function ProductsList() {
       <h2>ProductsList</h2>
       <ul>
         {productsArr.map((pObj) => (
-          <li>Hello</li>
+          <SingleProduct key={pObj.id} item={pObj} />
+          // <li key={pObj.id}>
+          //   <Card>
+          //     {pObj.title} - ${pObj.price.toFixed(2)} - Stock: {pObj.stock}
+          //     <button>Add to Cart</button>
+          //   </Card>
+          // </li>
         ))}
       </ul>
     </div>
