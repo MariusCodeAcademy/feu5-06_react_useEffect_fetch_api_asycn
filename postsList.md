@@ -33,3 +33,6 @@ const MyComponent = () => {
 export default MyComponent;
 
 ```
+
+8. prideti mygtuka delete i SinglePost.
+9. jo paspaudimu istrinti ta post is state.
