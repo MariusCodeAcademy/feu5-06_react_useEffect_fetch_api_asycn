@@ -10,6 +10,14 @@ function UsersList() {
   useEffect(() => {
     async function getUsers() {
       // fetch
+      try {
+        const resp = await fetch(url);
+        const dataInJs = await resp.json();
+        console.log('dataInJs ===', dataInJs);
+        setUsersArr(dataInJs.users);
+      } catch (error) {
+        console.warn('error', error);
+      }
     }
     getUsers();
   }, []);
