@@ -1,5 +1,5 @@
 // susikuriam komponenta
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from './card/Card';
 
 function Counter() {
@@ -13,6 +13,12 @@ function Counter() {
   function increase() {
     setCount(count + 1);
   }
+  //efektas pasileidzia tik susikurus komponentui
+  useEffect(() => {
+    setTimeout(() => {
+      setCount(count + 1);
+    }, 5000);
+  }, []);
 
   return (
     <Card center>
