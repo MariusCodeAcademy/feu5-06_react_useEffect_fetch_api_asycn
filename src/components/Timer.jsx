@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Card from './card/Card';
+import Card from './ui/card/Card';
 
 function Timer() {
   console.log('Timer mounted');

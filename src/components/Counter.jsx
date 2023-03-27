@@ -1,6 +1,6 @@
 // susikuriam komponenta
 import React, { useState, useEffect } from 'react';
-import Card from './card/Card';
+import Card from './ui/card/Card';
 
 function Counter() {
   const [count, setCount] = useState(0);
