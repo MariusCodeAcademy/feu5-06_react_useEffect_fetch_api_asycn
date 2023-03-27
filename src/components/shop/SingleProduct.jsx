@@ -6,8 +6,8 @@ function SingleProduct(props) {
   return (
     <li>
       <Card>
-        {pObj.title} - ${pObj.price.toFixed(2)} - Stock: {pObj.stock}
-        <button>Add to Cart</button>
+        debugID: {pObj.id} <br /> {pObj.title} - ${pObj.price.toFixed(2)} - Stock: {pObj.stock}
+        <button onClick={props.onAddToCart}>Add to Cart</button>
       </Card>
     </li>
   );

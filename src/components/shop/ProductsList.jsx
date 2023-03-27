@@ -1,6 +1,5 @@
 // sukurti komponenta
 import React, { useEffect, useState } from 'react';
-import Card from '../ui/card/Card';
 import SingleProduct from './SingleProduct';
 
 function ProductsList() {
@@ -16,12 +15,16 @@ function ProductsList() {
       .catch(console.warn);
   }, []);
 
+  function addToCart(idOfProd) {
+    console.log('addToCart', idOfProd);
+  }
+
   return (
     <div>
       <h2>ProductsList</h2>
       <ul>
         {productsArr.map((pObj) => (
-          <SingleProduct key={pObj.id} item={pObj} />
+          <SingleProduct key={pObj.id} item={pObj} onAddToCart={() => addToCart(pObj.id)} />
           // <li key={pObj.id}>
           //   <Card>
           //     {pObj.title} - ${pObj.price.toFixed(2)} - Stock: {pObj.stock}
