@@ -35,7 +35,7 @@ function ProductsList() {
     <div>
       <h2>ProductsList</h2>
 
-      <Cart list={cartArr} />
+      {/* <Cart list={cartArr} /> */}
       <ul>
         {productsArr.map((pObj) => (
           <SingleProduct key={pObj.id} item={pObj} onAddToCart={() => addToCart(pObj.id)} />
