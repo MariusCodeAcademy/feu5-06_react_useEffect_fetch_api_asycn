@@ -4,6 +4,16 @@ import SingleProduct from './SingleProduct';
 
 function ProductsList() {
   const [productsArr, setProductsArr] = useState([]);
+  const [cartArr, setCartArr] = useState([
+    {
+      cartId: Math.random().toString().slice(2),
+      productId: 5,
+      title: 'Apple',
+      price: '599',
+      img: 'apple.jpg',
+      qty: 1,
+    },
+  ]);
 
   useEffect(() => {
     fetch('https://dummyjson.com/products')
@@ -17,11 +27,15 @@ function ProductsList() {
 
   function addToCart(idOfProd) {
     console.log('addToCart', idOfProd);
+    // pamazinti vienetu prekes stock
+    // perkelti preke i cart
   }
 
   return (
     <div>
       <h2>ProductsList</h2>
+
+      <Cart list={cartArr} />
       <ul>
         {productsArr.map((pObj) => (
           <SingleProduct key={pObj.id} item={pObj} onAddToCart={() => addToCart(pObj.id)} />
